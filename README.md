@@ -1,3 +1,5 @@
+https://pando-r1.github.io/eldritch-codejam/
+
 # Eldritch Horror Codejam
 
 ## Описание проекта
