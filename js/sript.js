@@ -144,7 +144,7 @@ function showCard(){
       // let num = getRandomNum(0, decomposedArr[level].length)
       if (decomposedArr[level][randomColor].length>0){
         let num2 = decomposedArr[level][randomColor].pop()
-        console.log(randomColor)
+        console.log(num2)
         up_card.style.background = `url(./assets/MythicCards/${color}/${color}${num2}.png) center / cover no-repeat`;
         updateForm()
       }else {
