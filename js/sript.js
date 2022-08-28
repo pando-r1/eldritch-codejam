@@ -35,7 +35,6 @@ const card_ancients = document.querySelector('.card-ancients');
 const easy = document.querySelector('.easy');
 const middle = document.querySelector('.middle');
 const hard = document.querySelector('.hard');
-// const difficulty = document.querySelector('.difficulty');
 const card_desk = document.querySelector('.card-desk');
 
 
@@ -64,7 +63,6 @@ function generateRow(max, all, color) {
 }
 
 function updateSet(){
-  // cardArr = [[], [], []];
   generateRow(green, greenAll, 'green');
   generateRow(brown, brownAll, 'brown');
   generateRow(blue, blueAll, 'blue');
@@ -82,6 +80,8 @@ function insertItem(column, row, amount) {
 }
 
 function decomposed(num) {
+  decomposedArr = [[[], [], []], [[], [], []], [[], [], []]]
+
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       const stage = i === 0 ? 'firstStage' : i === 1 ? 'secondStage' : 'thirdStage'
@@ -140,8 +140,6 @@ function showCard(){
   const color = randomColor === 0 ? 'green' : randomColor === 1 ? 'brown' : 'blue'
   if (level === 0) {
     if (decomposedArr[level][0].length > 0 || decomposedArr[level][1].length > 0 || decomposedArr[level][2].length > 0){
-
-      // let num = getRandomNum(0, decomposedArr[level].length)
       if (decomposedArr[level][randomColor].length>0){
         let num2 = decomposedArr[level][randomColor].pop()
         console.log(num2)
@@ -153,8 +151,6 @@ function showCard(){
     }else level++
   }else if (level === 1){
     if (decomposedArr[level][0].length > 0 || decomposedArr[level][1].length > 0 || decomposedArr[level][2].length > 0) {
-
-      // let num = getRandomNum(0, decomposedArr[level].length)
       if (decomposedArr[level][randomColor].length > 0) {
         let num2 = decomposedArr[level][randomColor].pop()
         console.log(num2)
@@ -166,8 +162,6 @@ function showCard(){
     } else level++
   }else if (level === 2) {
     if (decomposedArr[level][0].length > 0 || decomposedArr[level][1].length > 0 || decomposedArr[level][2].length > 0) {
-
-      // let num = getRandomNum(0, decomposedArr[level].length)
       if (decomposedArr[level][randomColor].length > 0) {
         let num2 = decomposedArr[level][randomColor].pop()
         console.log(num2)
@@ -179,8 +173,6 @@ function showCard(){
     }else level=0
   }
 }
-
-// decomposed(0);
 
 down_card.addEventListener('click', showCard);
 
@@ -202,7 +194,7 @@ middle.addEventListener('click', function () {
   updateSet()
   decomposed(0);
   updateForm()
-  console.table(cardArr)
+  console.log(decomposedArr)
   middle.classList.add('active');
   card_desk.classList.add('active');
   // if (easy.classList.contains('active')){
@@ -223,4 +215,3 @@ middle.addEventListener('click', function () {
 //   }
 // });
 console.log('Реализовано замешивание колоды на среднем уровне сложности для карты древнего "Азотот"')
-console.log(decomposedArr)
