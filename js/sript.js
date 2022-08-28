@@ -31,11 +31,13 @@ const item_3_3 = document.querySelector('.item-3-3');
 
 const down_card = document.querySelector('.face-down-card');
 const up_card = document.querySelector('.face-up-card');
-const card_ancients = document.querySelector('.card-ancients');
+const azathoth = document.querySelector('.azathoth');
 const easy = document.querySelector('.easy');
 const middle = document.querySelector('.middle');
 const hard = document.querySelector('.hard');
 const card_desk = document.querySelector('.card-desk');
+const difficulty = document.querySelector('.difficulty');
+const level_difficulty = document.querySelector('.level');
 
 
 let cardArr = [[], [], []];
@@ -176,8 +178,9 @@ function showCard(){
 
 down_card.addEventListener('click', showCard);
 
-card_ancients.addEventListener('click', function () {
-  card_ancients.classList.toggle('active');;
+azathoth.addEventListener('click', function () {
+  azathoth.classList.add('active');
+  level_difficulty.classList.add('active');
 });
 
 // easy.addEventListener('click', function () {
@@ -214,4 +217,15 @@ middle.addEventListener('click', function () {
 //     middle.classList.remove('active');
 //   }
 // });
+
+// azathoth.addEventListener('click', function () {
+//   level_difficulty.classList.add('active');
+  // if (easy.classList.contains('active')){
+  //   easy.classList.remove('active');
+  // }
+  // if (middle.classList.contains('active')){
+  //   middle.classList.remove('active');
+  // }
+// });
+
 console.log('Реализовано замешивание колоды на среднем уровне сложности для карты древнего "Азотот"')
