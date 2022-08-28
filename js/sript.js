@@ -136,7 +136,7 @@ function updateForm() {
 }
 
 function showCard(){
-  const randomColor = getRandomNum(0, 2)
+  const randomColor = getRandomNum(0, 3)
   const color = randomColor === 0 ? 'green' : randomColor === 1 ? 'brown' : 'blue'
   if (level === 0) {
     if (decomposedArr[level][0].length > 0 || decomposedArr[level][1].length > 0 || decomposedArr[level][2].length > 0){
@@ -145,7 +145,7 @@ function showCard(){
       if (decomposedArr[level][randomColor].length>0){
         let num2 = decomposedArr[level][randomColor].pop()
         console.log(randomColor)
-        up_card.style.background = `url(./assets/MythicCards/${color}/${color}${randomColor}.png) center / cover no-repeat`;
+        up_card.style.background = `url(./assets/MythicCards/${color}/${color}${num2}.png) center / cover no-repeat`;
         updateForm()
       }else {
         showCard()
@@ -155,8 +155,8 @@ function showCard(){
     if (decomposedArr[level][0].length > 0 || decomposedArr[level][1].length > 0 || decomposedArr[level][2].length > 0) {
 
       // let num = getRandomNum(0, decomposedArr[level].length)
-      if (decomposedArr[level][num].length > 0) {
-        let num2 = decomposedArr[level][num].pop()
+      if (decomposedArr[level][randomColor].length > 0) {
+        let num2 = decomposedArr[level][randomColor].pop()
         console.log(num2)
         up_card.style.background = `url(./assets/MythicCards/${color}/${color}${num2}.png) center / cover no-repeat`;
         updateForm()
@@ -168,8 +168,8 @@ function showCard(){
     if (decomposedArr[level][0].length > 0 || decomposedArr[level][1].length > 0 || decomposedArr[level][2].length > 0) {
 
       // let num = getRandomNum(0, decomposedArr[level].length)
-      if (decomposedArr[level][num].length > 0) {
-        let num2 = decomposedArr[level][num].pop()
+      if (decomposedArr[level][randomColor].length > 0) {
+        let num2 = decomposedArr[level][randomColor].pop()
         console.log(num2)
         up_card.style.background = `url(./assets/MythicCards/${color}/${color}${num2}.png) center / cover no-repeat`;
         updateForm()
